@@ -1,5 +1,5 @@
 import moment, { Moment } from "moment";
-import { observable, action, computed } from "mobx";
+import { observable, action } from "mobx";
 
 import { IIssueServer, IUser, IComment } from "../types";
 

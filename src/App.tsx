@@ -10,18 +10,18 @@ export default () => {
     repo: "react",
     issuesKey: "facebook/react",
   });
-  const setValue = useCallback(
-    (ev: ChangeEvent<HTMLInputElement>) => {
-      setState({
-        ...state,
-        [ev.target.getAttribute("id") as string]: ev.target.value,
-      });
-    },
-    [state]
-  );
+  const setValue = useCallback((ev: ChangeEvent<HTMLInputElement>) => {
+    setState((state) => ({
+      ...state,
+      [ev.target.getAttribute("id") as string]: ev.target.value,
+    }));
+  }, []);
   const setIssueKey = useCallback(() => {
-    setState({ ...state, issuesKey: `${state.user}/${state.repo}` });
-  }, [state.repo, state.user]);
+    setState((state) => ({
+      ...state,
+      issuesKey: `${state.user}/${state.repo}`,
+    }));
+  }, []);
   return (
     <div className="app">
       <div className="config">
