@@ -11,6 +11,7 @@ export default () => {
     issuesKey: "facebook/react",
   });
   const setValue = useCallback((ev: ChangeEvent<HTMLInputElement>) => {
+    ev.persist();
     setState((state) => ({
       ...state,
       [ev.target.getAttribute("id") as string]: ev.target.value,
